@@ -87,10 +87,6 @@ GameObject:
   - 124: {fileID: 46129801}
   - 81: {fileID: 46129800}
   - 114: {fileID: 46129799}
-  - 114: {fileID: 46129798}
-  - 114: {fileID: 46129805}
-  - 114: {fileID: 46129807}
-  - 114: {fileID: 46129806}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -98,23 +94,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &46129798
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 46129797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2e545ecefeb9249a6f136858259a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  board: 000000000000000000000000000000000000000000000000000000000000000000000000
-  xTurn: 1
-  gameState: 0
-  winner: 0
-  guiSkin: {fileID: 0}
-  titleImage: {fileID: 0}
 --- !u!114 &46129799
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,8 +109,8 @@ MonoBehaviour:
   xTurn: 1
   gameState: 0
   winner: 0
-  guiSkin: {fileID: 0}
-  titleImage: {fileID: 0}
+  guiSkin: {fileID: 11400000, guid: e9c39518897756a48827e0a759aa7d65, type: 2}
+  titleImage: {fileID: 2800000, guid: ff7013b773917644d84676f547fb418e, type: 3}
 --- !u!81 &46129800
 AudioListener:
   m_ObjectHideFlags: 0
@@ -193,54 +172,3 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
---- !u!114 &46129805
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 46129797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2e545ecefeb9249a6f136858259a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  board: 000000000000000000000000000000000000000000000000000000000000000000000000
-  xTurn: 1
-  gameState: 0
-  winner: 0
-  guiSkin: {fileID: 0}
-  titleImage: {fileID: 0}
---- !u!114 &46129806
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 46129797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2e545ecefeb9249a6f136858259a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  board: 000000000000000000000000000000000000000000000000000000000000000000000000
-  xTurn: 1
-  gameState: 0
-  winner: 0
-  guiSkin: {fileID: 0}
-  titleImage: {fileID: 0}
---- !u!114 &46129807
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 46129797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a2e545ecefeb9249a6f136858259a5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  board: 000000000000000000000000000000000000000000000000000000000000000000000000
-  xTurn: 1
-  gameState: 0
-  winner: 0
-  guiSkin: {fileID: 0}
-  titleImage: {fileID: 0}

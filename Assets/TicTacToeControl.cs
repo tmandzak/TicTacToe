@@ -14,6 +14,7 @@ public class TicTacToeControl : MonoBehaviour
 		{
 				if (guiSkin != null)
 						GUI.skin = guiSkin;
+						
 				switch (gameState) {
 				case GameState.Opening:
 						DrawOpening ();
@@ -33,7 +34,7 @@ public class TicTacToeControl : MonoBehaviour
 		{
 				Rect titleRect = new Rect (0, 0, titleImage.width, titleImage.height);
 				//GUI.Label (titleRect, "Tic-Tac-Toe");
-		GUI.DrawTexture(titleRect, titleImage);
+				GUI.DrawTexture (titleRect, titleImage);
 
 				Rect multiRect = new Rect (titleRect.x, titleRect.y + titleRect.height, titleRect.width, 75);
 
@@ -59,7 +60,7 @@ public class TicTacToeControl : MonoBehaviour
 										if (GUI.Button (square, owner)) 
 												SetControl (boardIndex); 
 								} else
-										GUI.Label (square, owner, owner+"Square");
+										GUI.Label (square, owner, owner + "Square");
 						}
 				}
 
