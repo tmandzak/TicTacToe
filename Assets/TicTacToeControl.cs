@@ -32,6 +32,9 @@ public class TicTacToeControl : MonoBehaviour
 
 		public void DrawOpening ()
 		{
+				Rect groupRect = new Rect ((Screen.width / 2) - (titleImage.width / 2), (Screen.height / 2) - ((titleImage.height + 75) / 2), titleImage.width, titleImage.height + 75);
+				GUI.BeginGroup (groupRect);
+		
 				Rect titleRect = new Rect (0, 0, titleImage.width, titleImage.height);
 				//GUI.Label (titleRect, "Tic-Tac-Toe");
 				GUI.DrawTexture (titleRect, titleImage);
@@ -43,13 +46,19 @@ public class TicTacToeControl : MonoBehaviour
 						gameState = GameState.Multiplayer;
 				}
 
-				
+				GUI.EndGroup ();
 		}
 
 		public void DrawGameBoard ()
 		{
-				float width = 75;
-				float height = 75;
+				bool widthSmaller = Screen.width < Screen.height;
+				float smallSide = widthSmaller ? Screen.width : Screen.height;
+		
+				//float width = 75;
+				//float height = 75;
+				float width = smallSide / 3;
+				float height = width;
+				
 				for (int y=0; y<3; y++) {
 						for (int x=0; x<3; x++) {
 								int boardIndex = (y * 3) + x;
@@ -65,6 +74,13 @@ public class TicTacToeControl : MonoBehaviour
 				}
 
 				Rect turnRect = new Rect (300, 0, 100, 100);
+				
+				turnRect.x = widthSmaller ? 0 : smallSide;
+				turnRect.y = widthSmaller ? smallSide : 0;
+				turnRect.width = widthSmaller ? Screen.width : Screen.width - Screen.height;
+				turnRect.height = widthSmaller ? Screen.height-Screen.width : Screen.height;
+				
+				
 				string turnTitle = xTurn ? "X's Turn!" : "O's Turn!";
 				GUI.Label (turnRect, turnTitle);
 
@@ -72,13 +88,20 @@ public class TicTacToeControl : MonoBehaviour
 
 		public void DrawGameOver ()
 		{
-				Rect winnerRect = new Rect (0, 0, 300, 75);
+				Rect groupRect = new Rect ((Screen.width / 2) - 150, (Screen.height / 2) - (titleImage.height / 2 - 75), 300, 150);
+				GUI.BeginGroup (groupRect);
+		
+				//Rect winnerRect = new Rect (0, 0, 300, 75);
+		Rect winnerRect = new Rect (0, 0, groupRect.width, groupRect.height/2);
+				
 				string winnerTitle = winner == SquareState.XControl ? "X Wins!" : winner == SquareState.OControl ? "O Wins!" : "It's A Tie!";
 				GUI.Label (winnerRect, winnerTitle);
 
 				winnerRect.y += winnerRect.height;
 				if (GUI.Button (winnerRect, "Main Menu"))
 						gameState = GameState.Opening;
+						
+				GUI.EndGroup ();
 
 		}
 
